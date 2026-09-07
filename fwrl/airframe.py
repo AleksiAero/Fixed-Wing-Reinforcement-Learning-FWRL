@@ -63,8 +63,8 @@ def geometry():
     tail=[]
     for j in range(33):
         y=-.34+j*.68/32
-        sweep=.07*abs(y)/.34
-        tail.append((-.99-sweep,-1.18-sweep,y,.08,0,1,.009*(1-.65*abs(y)/.34)))
+        fraction=abs(y)/.34
+        tail.append((-.94-.20*fraction,-1.20-.05*fraction,y,.08,0,1,.009*(1-.65*fraction)))
     loft('Fixed horizontal stabilizer',tail,(.09,.12,.14))
     fin=[]
     for j in range(25):
