@@ -159,13 +159,19 @@ class Policy(nn.Module):
 
 
 def train(args):
+    if args.device == 'auto':
+        args.device = 'cuda' if torch.cuda.is_available() else 'cpu'
     if args.device == "cuda" and not torch.cuda.is_available():
-        raise RuntimeError("CUDA requested but unavailable; install a Blackwell-capable PyTorch wheel in WSL and check nvidia-smi")
+        raise RuntimeError("CUDA requested but unavailable; install a compatible PyTorch GPU build and driver, or use --device cpu")
     if min(args.envs, args.steps, args.horizon) <= 0:
         raise ValueError("envs, steps and horizon must be positive")
     torch.manual_seed(args.seed)
     torch.set_num_threads(4)
     world = load_world(args.world)
+    if getattr(args, 'live_state', None):
+        packet_path = Path(args.live_state)
+        packet_path.parent.mkdir(parents=True, exist_ok=True)
+        packet_path.with_name(packet_path.stem+'-world.json').write_text(json.dumps(world), encoding='utf-8')
     env = VectorFlight(world, args.envs, args.device, args.seed)
     obs = env.observation()
     model = Policy(obs.shape[1], from_scratch=env.direct).to(args.device)
@@ -294,7 +300,7 @@ def main():
     parser.add_argument("--start-paused", action="store_true")
     parser.add_argument("--owner-pid", type=int, help="Stop and save when the Linux viewer exits")
     parser.add_argument("--realtime", action="store_true", help="Pace training physics to wall time so every launch is visible")
-    parser.add_argument("--device", choices=["cpu", "cuda"], default="cuda")
+    parser.add_argument("--device", choices=["auto", "cpu", "cuda"], default="auto")
     parser.add_argument("--envs", type=int, default=128)
     parser.add_argument("--steps", type=int, default=1_000_000)
     parser.add_argument("--horizon", type=int, default=128)

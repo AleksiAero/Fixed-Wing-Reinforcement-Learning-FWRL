@@ -1,5 +1,7 @@
 # SYNTHOSAR Flight Lab
 
+**Native Linux developers:** follow [the Linux setup guide](docs/linux.md). Core training and the live browser viewer work without Windows, WSL, ROS or a GPU. Start with `bash scripts/setup_linux.sh`; CPU/CUDA selection is automatic.
+
 Latest airframe: reference-inspired long fuselage, 2.106 m swept wings and conventional fixed tail attached directly to the body. The model retains elevon control. Reference sea-level 1g stall speed is **45 mph**, using 0.31 m² wing area; launch speed remains **50 mph**. Stall is modeled through angle of attack, lift loss and increased drag, not an arbitrary speed cutoff. Aircraft dimensions and coefficients are design assumptions, not measurements from the reference image.
 
 The source includes the Blender scene generator and a live Windows browser viewer. Generated `.blend` files, local virtual environments and training checkpoints are excluded from Git; rebuild the scene using the setup commands below.

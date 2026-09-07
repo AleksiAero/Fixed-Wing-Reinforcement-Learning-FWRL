@@ -1,0 +1,13 @@
+name: Linux tests
+on: [push, pull_request]
+jobs:
+  cpu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: bash scripts/setup_linux.sh
+      - run: bash scripts/python.sh -m pytest -q
+      - run: bash scripts/python.sh -m fwrl.training --device cpu --envs 2 --horizon 8 --steps 16 --output runs/ci --live-state runs/live/ci.json

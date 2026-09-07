@@ -1,6 +1,7 @@
-"""Local Windows WebGL view of an existing live training session."""
+"""Cross-platform local WebGL view of an existing live training session."""
 import argparse
 import json
+import os
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from .landscape import terrain_height, gate_normal
@@ -13,11 +14,16 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--port',type=int,default=8765)
+    parser.add_argument('--live-state',type=Path,help='Telemetry JSON produced by fwrl.training')
     args = parser.parse_args()
     packets = [p for p in (ROOT/'runs/live').glob('mountain-zero-*.json') if not p.name.endswith('-world.json')]
-    current = max(packets,key=lambda p:p.stat().st_mtime)
+    if not args.live_state and not packets:
+        parser.error('No live telemetry found. Start fwrl.training with --live-state first.')
+    current = args.live_state or max(packets,key=lambda p:p.stat().st_mtime)
     world = json.loads(current.with_name(current.stem+'-world.json').read_text(encoding='utf-8'))
-    run = ROOT/'runs'/current.stem
+    run = Path(json.loads(current.read_text(encoding='utf-8'))['run'])
+    if os.name == 'nt' and str(run).startswith('\\mnt\\'):
+        run = ROOT/'runs'/run.name
     lo,hi = world['bounds']
     nx,ny = 360,300
     vertices = [[lo[0]+(hi[0]-lo[0])*i/nx,lo[1]+(hi[1]-lo[1])*j/ny] for j in range(ny+1) for i in range(nx+1)]
@@ -63,7 +69,7 @@ def main():
                 self.send_error(404);return
             self.send_response(204);self.end_headers()
 
-    print(f'Live Windows viewer: http://127.0.0.1:{args.port}',flush=True)
+    print(f'Live flight viewer: http://127.0.0.1:{args.port}',flush=True)
     ThreadingHTTPServer(('127.0.0.1',args.port),Handler).serve_forever()
 
 

@@ -77,3 +77,11 @@ This establishes basic functionality, not real-aircraft fidelity, controller fli
 - 33 tests pass with the updated 45 mph reference stall relationship and larger wing.
 - Existing coverage verifies below-stall lift deficiency, post-stall lift loss/drag rise, inability to sustain vertical powered climb, servo response, gate/crash rewards and resets.
 - Long fuselage, directly attached tail, longer swept wings and aft propeller share one mesh generator between Blender and the browser.
+
+## Native Linux compatibility
+
+- Ubuntu Linux under WSL: 33 tests passed. Native shell wrapper ran CPU PPO for 16 transitions and saved telemetry plus its companion world file.
+- With CUDA hidden, `--device auto` completed a second 16-transition CPU run.
+- Native Linux viewer returned HTTP 200 for page, scene and state on an isolated port.
+- Windows: 23 tests passed, 10 skipped because that environment has no PyTorch.
+- Physical Linux desktop and other distributions were not exercised locally; Ubuntu CPU CI is included.

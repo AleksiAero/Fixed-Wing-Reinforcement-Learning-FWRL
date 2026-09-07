@@ -48,7 +48,7 @@ class FWRLStartLearning(bpy.types.Operator):
         world_path.write_text(scene['navigation_world_json'], encoding='utf-8')
         def target(p):
             return linux_path(p) if os.name == 'nt' else str(p)
-        command = ['bash','scripts/wsl_python.sh','-m','fwrl.training','--device','cuda',
+        command = ['bash','scripts/python.sh','-m','fwrl.training','--device',os.environ.get('FWRL_DEVICE','auto'),
                    '--world',target(world_path),'--envs','64','--steps',str(scene.get('learning_steps',10000000)),
                    '--seed',str(time.time_ns() % 2147483647),
                    '--realtime','--live-state',target(telemetry),'--output',target(run)]

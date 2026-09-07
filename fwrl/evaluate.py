@@ -6,7 +6,9 @@ import torch
 from .training import VectorFlight, Policy
 
 
-def evaluate(checkpoint, device='cuda', count=16, seed=1001):
+def evaluate(checkpoint, device='auto', count=16, seed=1001):
+    if device == 'auto':
+        device = 'cuda' if torch.cuda.is_available() else 'cpu'
     saved = torch.load(checkpoint, map_location=device, weights_only=True)
     metadata = saved['metadata']
     env = VectorFlight(metadata['world'], count, device, seed)
@@ -53,7 +55,7 @@ def evaluate(checkpoint, device='cuda', count=16, seed=1001):
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
     p.add_argument('checkpoint')
-    p.add_argument('--device', choices=['cpu', 'cuda'], default='cuda')
+    p.add_argument('--device', choices=['auto', 'cpu', 'cuda'], default='auto')
     p.add_argument('--episodes', type=int, default=16)
     p.add_argument('--seed', type=int, default=1001)
     a = p.parse_args()

@@ -231,7 +231,7 @@ class Workbench(tk.Tk):
 
     def run_baseline(self):
         if self.world.get('control_mode') in ('direct','elevons'):
-            self.run_process(self.wsl_command('bash','scripts/wsl_python.sh','-m','fwrl.session','--world',self.linux_path(self.world_path)))
+            self.run_process(self.wsl_command('bash','scripts/python.sh','-m','fwrl.session','--world',self.linux_path(self.world_path)))
             return
         states, result = rollout(self.world)
         self.events.put(('flight', (states, result)))
@@ -392,12 +392,12 @@ class Workbench(tk.Tk):
             if self.busy:
                 return
             if self.world.get('control_mode') in ('direct','elevons'):
-                command = self.wsl_command('bash','scripts/wsl_python.sh','-m','fwrl.session','--world',self.linux_path(self.world_path),'--steps',str(steps))
+                command = self.wsl_command('bash','scripts/python.sh','-m','fwrl.session','--world',self.linux_path(self.world_path),'--steps',str(steps))
                 self.background(lambda: self.run_process(command))
                 self.status.set('Opening live learning in Blender. Pause/stop in the Flight Lab sidebar.')
                 return
             self.training_run = ROOT/'runs'/f'ppo-{time.time_ns()}'
-            command = self.wsl_command('bash', 'scripts/wsl_python.sh', '-m', 'fwrl.training', '--device', 'cuda', '--steps', str(steps), '--world', self.linux_path(self.world_path), '--output', self.linux_path(self.training_run))
+            command = self.wsl_command('bash', 'scripts/python.sh', '-m', 'fwrl.training', '--device', os.environ.get('FWRL_DEVICE','auto'), '--steps', str(steps), '--world', self.linux_path(self.world_path), '--output', self.linux_path(self.training_run))
             self.stop_button.set_enabled(True)
             self.background(lambda: self.run_process(command))
         except Exception as exc:
@@ -417,7 +417,7 @@ class Workbench(tk.Tk):
         checkpoint = filedialog.askopenfilename(initialdir=ROOT/'runs', filetypes=[('FWRL policy checkpoint', '*.pt')])
         if checkpoint:
             try:
-                command = self.wsl_command('bash', 'scripts/wsl_python.sh', '-m', 'fwrl.evaluate', self.linux_path(Path(checkpoint)), '--device', 'cuda')
+                command = self.wsl_command('bash', 'scripts/python.sh', '-m', 'fwrl.evaluate', self.linux_path(Path(checkpoint)), '--device', os.environ.get('FWRL_DEVICE','auto'))
                 self.background(lambda: self.run_process(command))
             except Exception as exc:
                 messagebox.showerror('Evaluation', str(exc), parent=self)
