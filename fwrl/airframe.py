@@ -12,7 +12,7 @@ def geometry():
     # Smooth tapered center body: long rounded nose, broad wing blend, rear motor.
     rings=[(1.15,.015,.018),(1.10,.037,.038),(.94,.059,.054),(.70,.085,.067),
            (.40,.11,.082),(.12,.13,.10),(-.15,.13,.10),(-.42,.108,.09),
-           (-.65,.080,.070),(-.88,.055,.050),(-1.10,.035,.035),(-1.31,.023,.023)]
+           (-.65,.092,.082),(-.88,.080,.072),(-1.10,.065,.060),(-1.31,.052,.050)]
     verts=[];faces=[];n=32
     for x,ry,rz in rings:
         for i in range(n):
@@ -64,7 +64,7 @@ def geometry():
     for j in range(33):
         y=-.34+j*.68/32
         sweep=.07*abs(y)/.34
-        tail.append((-.99-sweep,-1.18-sweep,y,.02,0,1,.009*(1-.65*abs(y)/.34)))
+        tail.append((-.99-sweep,-1.18-sweep,y,.08,0,1,.009*(1-.65*abs(y)/.34)))
     loft('Fixed horizontal stabilizer',tail,(.09,.12,.14))
     fin=[]
     for j in range(25):
@@ -89,6 +89,7 @@ def geometry():
         for v in part['vertices']: v[1]*=1.35
         part['pivot']=list(part['pivot'])
         part['pivot'][1]*=1.35
+        if not part.get('parent'): part['pivot'][0]-=.12
         if part['name'].endswith('elevon'):
             norm=math.hypot(.35,1.35)
             part['hinge_axis']=[-.35*sign/norm,1.35/norm,0]

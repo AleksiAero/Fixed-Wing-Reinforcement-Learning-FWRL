@@ -547,8 +547,8 @@ if 'launcher' in world:
 
     if world.get('control_mode') == 'elevons':
         for sign,label in [(1,'Left'),(-1,'Right')]:
-            start = Vector((.55*(-.22)-.35*.43+.06,sign*.43*1.35,.065))
-            end = Vector((.55*(-.39)-.35*.43+.06,sign*.43*1.35,.065))
+            start = Vector((.55*(-.22)-.35*.43+.06-.12,sign*.43*1.35,.065))
+            end = Vector((.55*(-.39)-.35*.43+.06-.12,sign*.43*1.35,.065))
             bpy.ops.mesh.primitive_cylinder_add(vertices=12,radius=.003,depth=1)
             rod=bpy.context.object
             rod.name=label+' pushrod'

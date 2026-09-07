@@ -144,7 +144,7 @@ def poll():
                         label='Left' if sign==1 else 'Right'
                         rod=bpy.data.objects.get(label+' pushrod')
                         if rod:
-                            start=Vector((.55*(-.22)-.35*.43+.06,sign*.43*1.35,.065))
+                            start=Vector((.55*(-.22)-.35*.43+.06-.12,sign*.43*1.35,.065))
                             end=surface.rotation_quaternion @ Vector((.55*(-.055)-.35*.18,sign*.18*1.35,.065)) + surface.location
                             rod.location=(start+end)/2
                             rod.rotation_quaternion=(end-start).to_track_quat('Z','Y')
