@@ -1,0 +1,184 @@
+{
+  "flights": [
+    {
+      "file": "data\\examples\\climb.csv",
+      "duration_s": 120.5,
+      "straight_level_percent": 0.0,
+      "coverage_percent": 100.0,
+      "classification_basis": "trajectory only; wings-level attitude unverified",
+      "seconds": {
+        "straight_climb": 120.5
+      },
+      "percent": {
+        "straight_climb": 100.0
+      },
+      "segments": [
+        {
+          "label": "straight_climb",
+          "start_s": 0.0,
+          "end_s": 120.5,
+          "duration_s": 120.5,
+          "heading_change_deg": 0.0
+        }
+      ],
+      "patterns": [],
+      "thresholds": {
+        "turn_rate_deg_s": 3.0,
+        "vertical_speed_m_s": 0.5,
+        "bank_deg": 5.0,
+        "min_groundspeed_m_s": 5.0,
+        "max_gap_s": 5.0,
+        "min_pattern_s": 8.0
+      }
+    },
+    {
+      "file": "data\\examples\\figure_eight.csv",
+      "duration_s": 120.5,
+      "straight_level_percent": 20.33195020746888,
+      "coverage_percent": 100.0,
+      "classification_basis": "trajectory only; wings-level attitude unverified",
+      "seconds": {
+        "left_level": 32.0,
+        "right_level": 64.0,
+        "straight_level": 24.5
+      },
+      "percent": {
+        "left_level": 26.556016597510375,
+        "right_level": 53.11203319502075,
+        "straight_level": 20.33195020746888
+      },
+      "segments": [
+        {
+          "label": "straight_level",
+          "start_s": 0.0,
+          "end_s": 5.0,
+          "duration_s": 5.0,
+          "heading_change_deg": -6.210010351369924
+        },
+        {
+          "label": "right_level",
+          "start_s": 5.0,
+          "end_s": 37.5,
+          "duration_s": 32.5,
+          "heading_change_deg": -267.6270935582434
+        },
+        {
+          "label": "straight_level",
+          "start_s": 37.5,
+          "end_s": 47.0,
+          "duration_s": 9.5,
+          "heading_change_deg": 0.6524106804951164
+        },
+        {
+          "label": "left_level",
+          "start_s": 47.0,
+          "end_s": 79.0,
+          "duration_s": 32.0,
+          "heading_change_deg": 266.13610927277796
+        },
+        {
+          "label": "straight_level",
+          "start_s": 79.0,
+          "end_s": 89.0,
+          "duration_s": 10.0,
+          "heading_change_deg": 0.16251514111061827
+        },
+        {
+          "label": "right_level",
+          "start_s": 89.0,
+          "end_s": 120.5,
+          "duration_s": 31.5,
+          "heading_change_deg": -264.48300007145815
+        }
+      ],
+      "patterns": [],
+      "thresholds": {
+        "turn_rate_deg_s": 3.0,
+        "vertical_speed_m_s": 0.5,
+        "bank_deg": 5.0,
+        "min_groundspeed_m_s": 5.0,
+        "max_gap_s": 5.0,
+        "min_pattern_s": 8.0
+      }
+    },
+    {
+      "file": "data\\examples\\loiter.csv",
+      "duration_s": 120.5,
+      "straight_level_percent": 0.0,
+      "coverage_percent": 100.0,
+      "classification_basis": "trajectory only; wings-level attitude unverified",
+      "seconds": {
+        "left_level": 120.5
+      },
+      "percent": {
+        "left_level": 100.0
+      },
+      "segments": [
+        {
+          "label": "left_level",
+          "start_s": 0.0,
+          "end_s": 120.5,
+          "duration_s": 120.5,
+          "heading_change_deg": 1012.6074099278749
+        }
+      ],
+      "patterns": [
+        {
+          "label": "left_level",
+          "start_s": 0.0,
+          "end_s": 120.5,
+          "duration_s": 120.5,
+          "heading_change_deg": 1012.6074099278749,
+          "pattern": "loiter_candidate"
+        }
+      ],
+      "thresholds": {
+        "turn_rate_deg_s": 3.0,
+        "vertical_speed_m_s": 0.5,
+        "bank_deg": 5.0,
+        "min_groundspeed_m_s": 5.0,
+        "max_gap_s": 5.0,
+        "min_pattern_s": 8.0
+      }
+    },
+    {
+      "file": "data\\examples\\straight.csv",
+      "duration_s": 120.5,
+      "straight_level_percent": 100.0,
+      "coverage_percent": 100.0,
+      "classification_basis": "trajectory only; wings-level attitude unverified",
+      "seconds": {
+        "straight_level": 120.5
+      },
+      "percent": {
+        "straight_level": 100.0
+      },
+      "segments": [
+        {
+          "label": "straight_level",
+          "start_s": 0.0,
+          "end_s": 120.5,
+          "duration_s": 120.5,
+          "heading_change_deg": 0.0
+        }
+      ],
+      "patterns": [],
+      "thresholds": {
+        "turn_rate_deg_s": 3.0,
+        "vertical_speed_m_s": 0.5,
+        "bank_deg": 5.0,
+        "min_groundspeed_m_s": 5.0,
+        "max_gap_s": 5.0,
+        "min_pattern_s": 8.0
+      }
+    }
+  ],
+  "duration_s": 482.0,
+  "straight_level_percent": 30.08298755186722,
+  "percent": {
+    "straight_climb": 25.0,
+    "left_level": 31.639004149377595,
+    "right_level": 13.278008298755188,
+    "straight_level": 30.08298755186722
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "User fixed-wing research aircraft",
+  "mass_kg": 5.0,
+  "wingspan_m_range": [
+    1.524,
+    1.778
+  ],
+  "wingspan_m_nominal": 1.651,
+  "camera_mount": "front-facing, airframe-fixed",
+  "camera_resolution_px": [
+    1080,
+    1920
+  ],
+  "camera_focal_length_mm": 4.0,
+  "camera_sensor_mm_portrait": [
+    3.15,
+    5.6
+  ],
+  "camera_fps": 50,
+  "camera_status": "Provisional values from supplied description; verify calibration and portrait orientation",
+  "model_status": "Quaternion rigid-body dynamics with finite elevon servo rates, inertia, angle of attack, post-stall lift loss and increased drag. Reference level-flight stall speed 50 mph supplied by user; remaining coefficients assumed.",
+  "needed_for_aerodynamics": [
+    "wing area",
+    "CLmax",
+    "drag polar",
+    "inertia tensor",
+    "CG",
+    "propulsion curve",
+    "actuator limits and rates",
+    "aerodynamic derivatives"
+  ],
+  "aerodynamics_assumed": {
+    "mass_kg": 5.0,
+    "wing_area_m2": 0.25,
+    "cl_max": 0.6411507172820383,
+    "cd0": 0.012,
+    "induced_drag": 0.055,
+    "max_thrust_n": 30.0,
+    "propulsive_power_w": 2400.0,
+    "max_load_g": 6.0,
+    "density_kg_m3": 1.225,
+    "wingspan_m": 1.651,
+    "mean_chord_m": 0.15142337976983647,
+    "inertia_kg_m2": [
+      0.4,
+      0.22,
+      0.5
+    ],
+    "stall_speed_mps": 22.352,
+    "stall_angle_rad": 0.2617993877991494,
+    "elevon_limit_rad": 0.4363323129985824,
+    "servo_rate_rad_s": 3.141592653589793,
+    "servo_tau_s": 0.12,
+    "motor_tau_s": 0.3
+  },
+  "control_surfaces": "Left and right elevons (common pitch, differential roll)"
+}
