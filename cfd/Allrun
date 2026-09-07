@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# OpenFOAM v1912 as packaged by Ubuntu 24.04; binaries are on /usr/bin.
+set -euo pipefail
+export WM_PROJECT_DIR=/usr/share/openfoam
+export FOAM_ETC=/usr/share/openfoam/etc
+cd "$(dirname "$0")"
+mkdir -p logs
+surfaceCheck constant/triSurface/spider.stl > log.surfaceCheck 2>&1
+blockMesh > log.blockMesh 2>&1
+surfaceFeatureExtract > log.surfaceFeatureExtract 2>&1
+snappyHexMesh -overwrite > log.snappyHexMesh 2>&1
+checkMesh -allTopology -allGeometry > log.checkMesh 2>&1
+# This is a coarse commissioning case; inspect checkMesh before using results.
+checkMesh > log.checkMeshStandard 2>&1
+grep -q 'Mesh OK' log.checkMeshStandard
+decomposePar -force > log.decomposePar 2>&1
+if [ "$(id -u)" = 0 ]; then
+    mpirun --allow-run-as-root -np 8 simpleFoam -parallel -noFunctionObjects > log.simpleFoam 2>&1
+else
+    mpirun -np 8 simpleFoam -parallel -noFunctionObjects > log.simpleFoam 2>&1
+fi
+reconstructPar -latestTime > log.reconstructPar 2>&1

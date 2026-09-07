@@ -1,0 +1,219 @@
+EddiePC: RTC timebase, using 213 picos/cycle from /proc instead of the detected 191 picos/cycle
+
+EddiePC: RTC timebase, using 213 picos/cycle from /proc instead of the detected 191 picos/cycle
+
+EddiePC: RTC timebase, using 213 picos/cycle from /proc instead of the detected 191 picos/cycle
+
+EddiePC: RTC timebase, using 213 picos/cycle from /proc instead of the detected 191 picos/cycle
+
+EddiePC: RTC timebase, using 213 picos/cycle from /proc instead of the detected 191 picos/cycle
+
+EddiePC: RTC timebase, using 213 picos/cycle from /proc instead of the detected 191 picos/cycle
+
+EddiePC: RTC timebase, using 213 picos/cycle from /proc instead of the detected 191 picos/cycle
+
+EddiePC: RTC timebase, using 213 picos/cycle from /proc instead of the detected 191 picos/cycle
+
+EddiePC.1729RTC timebase, using 213 picos/cycle from /proc instead of the detected 191 picos/cycle
+
+EddiePC.1732RTC timebase, using 213 picos/cycle from /proc instead of the detected 191 picos/cycle
+
+EddiePC.1730RTC timebase, using 213 picos/cycle from /proc instead of the detected 191 picos/cycle
+
+EddiePC.1734RTC timebase, using 213 picos/cycle from /proc instead of the detected 191 picos/cycle
+
+EddiePC.1733RTC timebase, using 213 picos/cycle from /proc instead of the detected 191 picos/cycle
+
+EddiePC.1731RTC timebase, using 213 picos/cycle from /proc instead of the detected 191 picos/cycle
+
+EddiePC.1735RTC timebase, using 213 picos/cycle from /proc instead of the detected 191 picos/cycle
+
+EddiePC.1728RTC timebase, using 213 picos/cycle from /proc instead of the detected 191 picos/cycle
+
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : simpleFoam -parallel
+Date   : Sep 06 2026
+Time   : 22:03:51
+Host   : EddiePC
+PID    : 1728
+I/O    : uncollated
+Case   : /root/spider-v2-cfd
+nProcs : 8
+Hosts  :
+(
+    (EddiePC 8)
+)
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+SIMPLE: convergence criteria
+    field p	 tolerance 0.0001
+    field U	 tolerance 1e-05
+    field k	 tolerance 1e-05
+    field omega	 tolerance 1e-05
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Selecting incompressible transport model Newtonian
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmegaSST
+Selecting patchDistMethod meshWave
+RAS
+{
+    RASModel        kOmegaSST;
+    turbulence      on;
+    printCoeffs     on;
+    alphaK1         0.85;
+    alphaK2         1;
+    alphaOmega1     0.5;
+    alphaOmega2     0.856;
+    gamma1          0.55555556;
+    gamma2          0.44;
+    beta1           0.075;
+    beta2           0.0828;
+    betaStar        0.09;
+    a1              0.31;
+    b1              1;
+    c1              10;
+    F3              false;
+    decayControl    false;
+    kInf            0;
+    omegaInf        0;
+}
+
+No MRF models present
+
+No finite volume options present
+
+Starting time loop
+
+[0] 
+[0] 
+[0] --> FOAM FATAL IO ERROR: 
+[0] error in IOstream "sha1" for operation Foam::Ostream& Foam::operator<<(Ostream&, const word&)
+[0] 
+[0] file: sha1 at line [3] 
+[3] 
+[3] --> FOAM FATAL IO ERROR: 
+[3] error in IOstream "sha1" for operation Foam::Ostream& Foam::operator<<(Ostream&, const word&)
+[3] 
+[3] file: sha1 at line 0.
+[3] 
+[3]     From function [5] 
+[5] 
+[5] --> FOAM FATAL IO ERROR: 
+[5] error in IOstream "sha1" for operation Foam::Ostream& Foam::operator<<(Ostream&, const word&)
+[5] 
+[5] file: sha1 at line 0.[1] 
+[1] 
+[1] --> FOAM FATAL IO ERROR: 
+[1] error in IOstream "sha1" for operation Foam::Ostream& Foam::operator<<(Ostream&, const word&)
+[1] 
+[1] file: sha1 at line 0.
+[1] 
+[1]     From function virtual bool Foam::IOstream::check(const char*) const
+[1]     in file db/IOstreams/IOstreams/IOstream.C at line 55.
+[1] 
+FOAM parallel run exiting
+[1] [6] 
+[6] 
+[6] --> FOAM FATAL IO ERROR: 
+[6] error in IOstream "sha1" for operation Foam::Ostream& Foam::operator<<(Ostream&, const word&)
+[6] 
+[6] file: sha1 at line 0.
+[6] 
+[6]     From function virtual bool Foam::IOstream::check(const char*) const
+[6]     in file db/IOstreams/IOstreams/IOstream.C at line 55.
+[6] 
+FOAM parallel run exiting
+[6] 
+[7] 
+[7] 
+[7] --> FOAM FATAL IO ERROR: 
+[7] error in IOstream "sha1" for operation Foam::Ostream& Foam::operator<<(Ostream&, const word&)
+[7] 
+[7] file: sha1 at line 0.
+[7] 
+[7]     From function virtual bool Foam::IOstream::check(const char*) const
+[7]     in file db/IOstreams/IOstreams/IOstream.C at line 55.
+[7] 
+FOAM parallel run exiting
+[7] 
+[2] 
+[2] 
+[2] --> FOAM FATAL IO ERROR: 
+[2] error in IOstream "sha1" for operation Foam::Ostream& Foam::operator<<(Ostream&, const word&)
+[2] 
+[2] file: sha1 at line 0.
+[2] 
+[2]     From function virtual bool Foam::IOstream::check(const char*) const
+[2]     in file db/IOstreams/IOstreams/IOstream.C at line 55.
+[2] 
+FOAM parallel run exiting
+[2] 
+[4] 
+[4] 
+[4] --> FOAM FATAL IO ERROR: 
+[4] error in IOstream "sha1" for operation Foam::Ostream& Foam::operator<<(Ostream&, const word&)
+[4] 
+[4] file: sha1 at line 0.
+[4] 
+[4]     From function virtual bool Foam::IOstream::check(const char*) const
+[4]     in file db/IOstreams/IOstreams/IOstream.C at line 55.
+[4] 
+FOAM parallel run exiting
+[4] 
+0.
+[0] 
+[0]     From function virtual bool Foam::IOstream::check(const char*) const
+[0]     in file db/IOstreams/IOstreams/IOstream.C at line 55.
+[0] 
+FOAM parallel run exiting
+[0] 
+virtual bool Foam::IOstream::check(const char*) const
+[3]     in file db/IOstreams/IOstreams/IOstream.C at line 55.
+[3] 
+FOAM parallel run exiting
+[3] 
+
+[5] 
+[5]     From function virtual bool Foam::IOstream::check(const char*) const
+[5]     in file db/IOstreams/IOstreams/IOstream.C at line 55.
+[5] 
+FOAM parallel run exiting
+[5] 
+
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 6 in communicator MPI_COMM_WORLD
+with errorcode 1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+[EddiePC:01725] 7 more processes have sent help message help-mpi-api.txt / mpi-abort
+[EddiePC:01725] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages

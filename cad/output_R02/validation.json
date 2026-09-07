@@ -1,0 +1,1720 @@
+{
+  "status": "packaging concept; hardware and structural fit unverified",
+  "source": "fwrl/airframe.py",
+  "units": "mm",
+  "span_mm": 2106,
+  "fuselage_length_mm": 2460,
+  "nominal_shell_mm": 3.0,
+  "wing_airfoil": "NACA 2415 finite trailing edge",
+  "tail_airfoil": "NACA 0010",
+  "wing_inner_profile_reduction_mm": 2.0,
+  "hatch_clearance_per_side_mm": 0.5,
+  "bodies": [
+    {
+      "component": "01 Fuselage shell - hollow 3 mm nominal",
+      "name": "Open hollow fuselage",
+      "solid": true,
+      "volume_cm3": 3640.954071713597,
+      "min_mm": [
+        -1310.0,
+        -153.76018035675722,
+        -87.81346714571609
+      ],
+      "max_mm": [
+        940.0,
+        153.76018035675722,
+        127.0662513687169
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "Detachable nose - camera access",
+      "solid": true,
+      "volume_cm3": 189.74614150715456,
+      "min_mm": [
+        940.5000000000002,
+        -68.36737915196656,
+        -37.1970406002161
+      ],
+      "max_mm": [
+        1150.0,
+        68.36737915196656,
+        77.19704060021608
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "Battery cover M3 screw head",
+      "solid": true,
+      "volume_cm3": 0.04375203383116685,
+      "min_mm": [
+        339.20000000000005,
+        -56.800000000000004,
+        103.21141009326092
+      ],
+      "max_mm": [
+        344.80000000000007,
+        -51.2,
+        105.21141009326092
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "Battery cover M3 screw head (1)",
+      "solid": true,
+      "volume_cm3": 0.04375203383116685,
+      "min_mm": [
+        339.20000000000005,
+        51.2,
+        103.21141009326092
+      ],
+      "max_mm": [
+        344.80000000000007,
+        56.800000000000004,
+        105.21141009326092
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "Battery cover M3 screw head (2)",
+      "solid": true,
+      "volume_cm3": 0.0437520338311663,
+      "min_mm": [
+        805.1999999999999,
+        -56.800000000000004,
+        71.19591055079363
+      ],
+      "max_mm": [
+        810.8,
+        -51.2,
+        73.19591055079363
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "Battery cover M3 screw head (3)",
+      "solid": true,
+      "volume_cm3": 0.0437520338311663,
+      "min_mm": [
+        805.1999999999999,
+        51.2,
+        71.19591055079363
+      ],
+      "max_mm": [
+        810.8,
+        56.800000000000004,
+        73.19591055079363
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "Battery cover",
+      "solid": true,
+      "volume_cm3": 185.8731151917557,
+      "min_mm": [
+        330.5,
+        -61.5,
+        60.787078581511324
+      ],
+      "max_mm": [
+        819.5,
+        61.5,
+        111.82081246504956
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "FC and receiver cover M3 screw head",
+      "solid": true,
+      "volume_cm3": 0.043752033831166715,
+      "min_mm": [
+        -320.79999999999995,
+        -76.80000000000001,
+        103.79339884375221
+      ],
+      "max_mm": [
+        -315.2,
+        -71.2,
+        105.79339884375221
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "FC and receiver cover M3 screw head (1)",
+      "solid": true,
+      "volume_cm3": 0.043752033831166715,
+      "min_mm": [
+        -320.79999999999995,
+        71.2,
+        103.79339884375221
+      ],
+      "max_mm": [
+        -315.2,
+        76.80000000000001,
+        105.79339884375221
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "FC and receiver cover M3 screw head (2)",
+      "solid": true,
+      "volume_cm3": 0.04375203383116679,
+      "min_mm": [
+        65.19999999999999,
+        -76.80000000000001,
+        113.92050582789815
+      ],
+      "max_mm": [
+        70.8,
+        -71.2,
+        115.92050582789815
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "FC and receiver cover M3 screw head (3)",
+      "solid": true,
+      "volume_cm3": 0.04375203383116679,
+      "min_mm": [
+        65.19999999999999,
+        71.2,
+        113.92050582789815
+      ],
+      "max_mm": [
+        70.8,
+        76.80000000000001,
+        115.92050582789815
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "FC and receiver cover",
+      "solid": true,
+      "volume_cm3": 205.23493852075785,
+      "min_mm": [
+        -329.5,
+        -81.5,
+        95.57059858042507
+      ],
+      "max_mm": [
+        79.50000000000003,
+        81.5,
+        127.81346714571609
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "ESC service cover M3 screw head",
+      "solid": true,
+      "volume_cm3": 0.0437520338311663,
+      "min_mm": [
+        -820.8,
+        -43.8,
+        92.0455663638655
+      ],
+      "max_mm": [
+        -815.1999999999999,
+        -38.199999999999996,
+        94.0455663638655
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "ESC service cover M3 screw head (1)",
+      "solid": true,
+      "volume_cm3": 0.0437520338311663,
+      "min_mm": [
+        -820.8,
+        38.199999999999996,
+        92.0455663638655
+      ],
+      "max_mm": [
+        -815.1999999999999,
+        43.8,
+        94.0455663638655
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "ESC service cover M3 screw head (2)",
+      "solid": true,
+      "volume_cm3": 0.04375203383116685,
+      "min_mm": [
+        -544.8000000000001,
+        -43.8,
+        105.12723749843425
+      ],
+      "max_mm": [
+        -539.2,
+        -38.199999999999996,
+        107.12723749843425
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "ESC service cover M3 screw head (3)",
+      "solid": true,
+      "volume_cm3": 0.04375203383116685,
+      "min_mm": [
+        -544.8000000000001,
+        38.199999999999996,
+        105.12723749843425
+      ],
+      "max_mm": [
+        -539.2,
+        43.8,
+        107.12723749843425
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "ESC service cover",
+      "solid": true,
+      "volume_cm3": 89.16810969213128,
+      "min_mm": [
+        -829.5,
+        -48.5,
+        84.75291810840055
+      ],
+      "max_mm": [
+        -530.5,
+        48.5,
+        111.42038239167024
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "Left servo lid",
+      "solid": true,
+      "volume_cm3": 3.8746062229009857,
+      "min_mm": [
+        -366.50000000000006,
+        558.0,
+        23.021477567740142
+      ],
+      "max_mm": [
+        -317.50000000000006,
+        603.0,
+        29.51016684375856
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "Left underside accessory cover",
+      "solid": true,
+      "volume_cm3": 5.367212990950052,
+      "min_mm": [
+        -400.50000000000006,
+        675.5,
+        -3.664167501745168
+      ],
+      "max_mm": [
+        -341.5,
+        724.5,
+        1.4488274685185498
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "Right servo lid",
+      "solid": true,
+      "volume_cm3": 3.8746062229000806,
+      "min_mm": [
+        -366.50000000000006,
+        -603.0,
+        23.02147756774014
+      ],
+      "max_mm": [
+        -317.50000000000006,
+        -558.0,
+        29.510166843758565
+      ]
+    },
+    {
+      "component": "02 Removable access covers - hide to inspect cavities",
+      "name": "Right underside accessory cover",
+      "solid": true,
+      "volume_cm3": 5.367212990949308,
+      "min_mm": [
+        -400.50000000000006,
+        -724.5,
+        -3.66416750174517
+      ],
+      "max_mm": [
+        -341.5,
+        -675.5,
+        1.4488274685185414
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Battery cover screw boss - pilot 2.6",
+      "solid": true,
+      "volume_cm3": 0.4945180996015489,
+      "min_mm": [
+        338.00000000000006,
+        -58.00000000000001,
+        89.1114100932609
+      ],
+      "max_mm": [
+        346.0,
+        -50.0,
+        100.11141009326093
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Battery cover screw boss - pilot 2.6 (1)",
+      "solid": true,
+      "volume_cm3": 0.4945180996015489,
+      "min_mm": [
+        338.00000000000006,
+        50.0,
+        89.1114100932609
+      ],
+      "max_mm": [
+        346.0,
+        58.00000000000001,
+        100.11141009326093
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Battery cover screw boss - pilot 2.6 (2)",
+      "solid": true,
+      "volume_cm3": 0.4945180996015489,
+      "min_mm": [
+        803.9999999999999,
+        -58.00000000000001,
+        57.09591055079363
+      ],
+      "max_mm": [
+        812.0,
+        -50.0,
+        68.09591055079365
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Battery cover screw boss - pilot 2.6 (3)",
+      "solid": true,
+      "volume_cm3": 0.4945180996015489,
+      "min_mm": [
+        803.9999999999999,
+        50.0,
+        57.09591055079363
+      ],
+      "max_mm": [
+        812.0,
+        58.00000000000001,
+        68.09591055079365
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Battery cover internal seating flange",
+      "solid": true,
+      "volume_cm3": 71.62208283440964,
+      "min_mm": [
+        323.0,
+        -69.0,
+        45.11688609480661
+      ],
+      "max_mm": [
+        827.0,
+        69.0,
+        109.40623204368394
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "FC and receiver cover screw boss - pilot 2.6",
+      "solid": true,
+      "volume_cm3": 0.4945180996015489,
+      "min_mm": [
+        -322.0,
+        -78.0,
+        89.69339884375219
+      ],
+      "max_mm": [
+        -314.0,
+        -70.0,
+        100.69339884375222
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "FC and receiver cover screw boss - pilot 2.6 (1)",
+      "solid": true,
+      "volume_cm3": 0.4945180996015489,
+      "min_mm": [
+        -322.0,
+        70.0,
+        89.69339884375219
+      ],
+      "max_mm": [
+        -314.0,
+        78.0,
+        100.69339884375222
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "FC and receiver cover screw boss - pilot 2.6 (2)",
+      "solid": true,
+      "volume_cm3": 0.4945180996015488,
+      "min_mm": [
+        63.99999999999999,
+        -78.0,
+        99.82050582789813
+      ],
+      "max_mm": [
+        72.0,
+        -70.0,
+        110.82050582789816
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "FC and receiver cover screw boss - pilot 2.6 (3)",
+      "solid": true,
+      "volume_cm3": 0.4945180996015488,
+      "min_mm": [
+        63.99999999999999,
+        70.0,
+        99.82050582789813
+      ],
+      "max_mm": [
+        72.0,
+        78.0,
+        110.82050582789816
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "FC and receiver cover internal seating flange",
+      "solid": true,
+      "volume_cm3": 64.89244693694354,
+      "min_mm": [
+        -337.0,
+        -89.0,
+        85.43081700103116
+      ],
+      "max_mm": [
+        87.00000000000003,
+        89.0,
+        124.18242875128809
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "ESC service cover screw boss - pilot 2.6",
+      "solid": true,
+      "volume_cm3": 0.4945180996015485,
+      "min_mm": [
+        -822.0,
+        -45.0,
+        77.9455663638655
+      ],
+      "max_mm": [
+        -813.9999999999999,
+        -37.0,
+        88.94556636386551
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "ESC service cover screw boss - pilot 2.6 (1)",
+      "solid": true,
+      "volume_cm3": 0.4945180996015485,
+      "min_mm": [
+        -822.0,
+        37.0,
+        77.9455663638655
+      ],
+      "max_mm": [
+        -813.9999999999999,
+        45.0,
+        88.94556636386551
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "ESC service cover screw boss - pilot 2.6 (2)",
+      "solid": true,
+      "volume_cm3": 0.4945180996015489,
+      "min_mm": [
+        -546.0,
+        -45.0,
+        91.02723749843423
+      ],
+      "max_mm": [
+        -538.0,
+        -37.0,
+        102.02723749843426
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "ESC service cover screw boss - pilot 2.6 (3)",
+      "solid": true,
+      "volume_cm3": 0.4945180996015489,
+      "min_mm": [
+        -546.0,
+        37.0,
+        91.02723749843423
+      ],
+      "max_mm": [
+        -538.0,
+        45.0,
+        102.02723749843426
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "ESC service cover internal seating flange",
+      "solid": true,
+      "volume_cm3": 45.00095976353532,
+      "min_mm": [
+        -837.0,
+        -56.0,
+        75.41117349402035
+      ],
+      "max_mm": [
+        -523.0,
+        56.0,
+        108.68543022358296
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Battery sled - 420 x 110; strap slots",
+      "solid": true,
+      "volume_cm3": 182.33600000000015,
+      "min_mm": [
+        360.0,
+        -55.0,
+        -24.000000000000004
+      ],
+      "max_mm": [
+        780.0,
+        55.0,
+        -20.0
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Battery lateral guide",
+      "solid": true,
+      "volume_cm3": 20.160000000000053,
+      "min_mm": [
+        360.0,
+        -58.00000000000001,
+        -24.000000000000004
+      ],
+      "max_mm": [
+        780.0,
+        -55.0,
+        -8.0
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Battery lateral guide (1)",
+      "solid": true,
+      "volume_cm3": 20.160000000000053,
+      "min_mm": [
+        360.0,
+        55.0,
+        -24.000000000000004
+      ],
+      "max_mm": [
+        780.0,
+        58.00000000000001,
+        -8.0
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Battery stop",
+      "solid": true,
+      "volume_cm3": 9.280000000000001,
+      "min_mm": [
+        355.0,
+        -58.0,
+        -24.000000000000004
+      ],
+      "max_mm": [
+        360.0,
+        58.0,
+        -8.0
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Battery stop (1)",
+      "solid": true,
+      "volume_cm3": 9.280000000000001,
+      "min_mm": [
+        780.0,
+        -58.0,
+        -24.000000000000004
+      ],
+      "max_mm": [
+        785.0,
+        58.0,
+        -8.0
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "FC isolated platform - 30.5 and 20 mm patterns",
+      "solid": true,
+      "volume_cm3": 57.34264072981792,
+      "min_mm": [
+        -220.0,
+        -60.0,
+        -18.0
+      ],
+      "max_mm": [
+        -100.0,
+        60.0,
+        -14.000000000000002
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "FC M3 standoff",
+      "solid": true,
+      "volume_cm3": 0.20231856689117395,
+      "min_mm": [
+        -178.25,
+        -18.25,
+        -14.0
+      ],
+      "max_mm": [
+        -172.24999999999997,
+        -12.249999999999998,
+        -3.999999999999999
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "FC M3 standoff (1)",
+      "solid": true,
+      "volume_cm3": 0.20231856689117395,
+      "min_mm": [
+        -178.25,
+        12.249999999999998,
+        -14.0
+      ],
+      "max_mm": [
+        -172.24999999999997,
+        18.25,
+        -3.999999999999999
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "FC M3 standoff (2)",
+      "solid": true,
+      "volume_cm3": 0.20231856689117395,
+      "min_mm": [
+        -147.75,
+        -18.25,
+        -14.0
+      ],
+      "max_mm": [
+        -141.75,
+        -12.249999999999998,
+        -3.999999999999999
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "FC M3 standoff (3)",
+      "solid": true,
+      "volume_cm3": 0.20231856689117395,
+      "min_mm": [
+        -147.75,
+        12.249999999999998,
+        -14.0
+      ],
+      "max_mm": [
+        -141.75,
+        18.25,
+        -3.999999999999999
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Receiver / GNSS auxiliary tray",
+      "solid": true,
+      "volume_cm3": 33.599999999999994,
+      "min_mm": [
+        -70.0,
+        -40.0,
+        -18.0
+      ],
+      "max_mm": [
+        35.0,
+        40.0,
+        -14.000000000000002
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "ESC tray with ventilation",
+      "solid": true,
+      "volume_cm3": 62.43199999999992,
+      "min_mm": [
+        -795.0,
+        -42.0,
+        -12.0
+      ],
+      "max_mm": [
+        -565.0,
+        42.0,
+        -8.0
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Tray support crossbeam trimmed to fuselage",
+      "solid": true,
+      "volume_cm3": 7.3629001711838304,
+      "min_mm": [
+        375.0,
+        -108.82241460242169,
+        -31.0
+      ],
+      "max_mm": [
+        380.0,
+        108.82241460242165,
+        -24.0
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Tray support crossbeam trimmed to fuselage (1)",
+      "solid": true,
+      "volume_cm3": 4.2044669722977135,
+      "min_mm": [
+        760.0,
+        -65.27645549562138,
+        -31.0
+      ],
+      "max_mm": [
+        765.0,
+        65.27645549562139,
+        -24.0
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Tray support crossbeam trimmed to fuselage (2)",
+      "solid": true,
+      "volume_cm3": 9.193897233622568,
+      "min_mm": [
+        -210.0,
+        -133.705769437963,
+        -25.0
+      ],
+      "max_mm": [
+        -205.0,
+        133.705769437963,
+        -18.0
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Tray support crossbeam trimmed to fuselage (3)",
+      "solid": true,
+      "volume_cm3": 9.586010979026744,
+      "min_mm": [
+        -110.0,
+        -139.1494541106669,
+        -25.0
+      ],
+      "max_mm": [
+        -105.0,
+        139.14945411066688,
+        -18.0
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Tray support crossbeam trimmed to fuselage (4)",
+      "solid": true,
+      "volume_cm3": 5.990362038766198,
+      "min_mm": [
+        -780.0,
+        -87.82362769915686,
+        -19.0
+      ],
+      "max_mm": [
+        -775.0,
+        87.82362769915686,
+        -12.000000000000002
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Tray support crossbeam trimmed to fuselage (5)",
+      "solid": true,
+      "volume_cm3": 7.023182367376748,
+      "min_mm": [
+        -570.0,
+        -102.42780380721581,
+        -19.0
+      ],
+      "max_mm": [
+        -565.0,
+        102.42780380721581,
+        -12.000000000000002
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Camera cradle floor",
+      "solid": true,
+      "volume_cm3": 12.48,
+      "min_mm": [
+        970.0,
+        -24.0,
+        -3.0000000000000004
+      ],
+      "max_mm": [
+        1035.0,
+        24.0,
+        0.9999999999999998
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Camera tilt bracket M3",
+      "solid": true,
+      "volume_cm3": 6.275872568420429,
+      "min_mm": [
+        970.0,
+        -26.999999999999996,
+        -3.0000000000000004
+      ],
+      "max_mm": [
+        1020.0,
+        -24.0,
+        39.0
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Camera tilt bracket M3 (1)",
+      "solid": true,
+      "volume_cm3": 6.275872568420429,
+      "min_mm": [
+        970.0,
+        24.0,
+        -3.0000000000000004
+      ],
+      "max_mm": [
+        1020.0,
+        26.999999999999996,
+        39.0
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Conformal nose locating collar",
+      "solid": true,
+      "volume_cm3": 40.79423148790107,
+      "min_mm": [
+        925.0,
+        -67.60295687858925,
+        -35.48574194168506
+      ],
+      "max_mm": [
+        953.0000000000001,
+        67.60295687858925,
+        75.48574194168506
+      ]
+    },
+    {
+      "component": "03 Equipment trays and mounting interfaces",
+      "name": "Motor firewall - provisional 30 mm square M3.4 pattern",
+      "solid": true,
+      "volume_cm3": 35.69016376383675,
+      "min_mm": [
+        -1308.0,
+        -48.0,
+        -28.0
+      ],
+      "max_mm": [
+        -1302.0,
+        48.0,
+        68.0
+      ]
+    },
+    {
+      "component": "08 Pusher propeller envelope - visual only",
+      "name": "Motor envelope",
+      "solid": true,
+      "volume_cm3": 84.59680697586978,
+      "min_mm": [
+        -1350.0,
+        -25.0,
+        -5.0
+      ],
+      "max_mm": [
+        -1302.0,
+        25.0,
+        45.0
+      ]
+    },
+    {
+      "component": "08 Pusher propeller envelope - visual only",
+      "name": "Prop hub",
+      "solid": true,
+      "volume_cm3": 12.315043202072514,
+      "min_mm": [
+        -1370.0,
+        -14.0,
+        6.000000000000001
+      ],
+      "max_mm": [
+        -1350.0,
+        14.0,
+        34.0
+      ]
+    },
+    {
+      "component": "08 Pusher propeller envelope - visual only",
+      "name": "Propeller visual blade",
+      "solid": true,
+      "volume_cm3": 22.54209506964658,
+      "min_mm": [
+        -1378.0155621709716,
+        -185.0,
+        -11.99300730733983
+      ],
+      "max_mm": [
+        -1341.9844378290284,
+        -11.999999999999993,
+        22.1
+      ]
+    },
+    {
+      "component": "08 Pusher propeller envelope - visual only",
+      "name": "Propeller visual blade (1)",
+      "solid": true,
+      "volume_cm3": 22.542095069646628,
+      "min_mm": [
+        -1378.0155621709716,
+        12.000000000000002,
+        17.9
+      ],
+      "max_mm": [
+        -1341.9844378290284,
+        185.0,
+        51.99300730733982
+      ]
+    },
+    {
+      "component": "04 Left NACA 2415 wing",
+      "name": "Left smooth NACA 2415 wing shell",
+      "solid": true,
+      "volume_cm3": 587.9090712900834,
+      "min_mm": [
+        -582.0526890763141,
+        145.0,
+        -10.563414902099195
+      ],
+      "max_mm": [
+        -17.534568629286085,
+        1053.0,
+        38.63353974915282
+      ]
+    },
+    {
+      "component": "05 Left wing mechanisms",
+      "name": "Left servo lid internal seating flange",
+      "solid": true,
+      "volume_cm3": 4.444538804123429,
+      "min_mm": [
+        -374.00000000000006,
+        550.5,
+        20.422687292089954
+      ],
+      "max_mm": [
+        -310.00000000000006,
+        610.5,
+        28.000387741515308
+      ]
+    },
+    {
+      "component": "05 Left wing mechanisms",
+      "name": "Left underside accessory cover internal seating flange",
+      "solid": true,
+      "volume_cm3": 5.286755262970567,
+      "min_mm": [
+        -408.00000000000006,
+        668.0,
+        -1.9079021358568848
+      ],
+      "max_mm": [
+        -334.0,
+        732.0,
+        3.4864241020320996
+      ]
+    },
+    {
+      "component": "05 Left wing mechanisms",
+      "name": "Left servo pocket floor - provisional low profile",
+      "solid": true,
+      "volume_cm3": 5.2439999999999936,
+      "min_mm": [
+        -365.0,
+        561.5,
+        0.0
+      ],
+      "max_mm": [
+        -319.0,
+        599.5,
+        3.0
+      ]
+    },
+    {
+      "component": "05 Left wing mechanisms",
+      "name": "Servo pocket wall",
+      "solid": true,
+      "volume_cm3": 1.2539999999999871,
+      "min_mm": [
+        -365.0,
+        561.5,
+        2.999999999999999
+      ],
+      "max_mm": [
+        -362.0,
+        599.5,
+        14.0
+      ]
+    },
+    {
+      "component": "05 Left wing mechanisms",
+      "name": "Servo pocket wall (1)",
+      "solid": true,
+      "volume_cm3": 1.2539999999999871,
+      "min_mm": [
+        -321.99999999999994,
+        561.5,
+        2.999999999999999
+      ],
+      "max_mm": [
+        -319.0,
+        599.5,
+        14.0
+      ]
+    },
+    {
+      "component": "05 Left wing mechanisms",
+      "name": "Swept main spar tube",
+      "solid": true,
+      "volume_cm3": 26.44019686313789,
+      "min_mm": [
+        -489.6376495888154,
+        153.3363920647132,
+        6.000010736684162
+      ],
+      "max_mm": [
+        -123.36235041118456,
+        941.6636079352868,
+        15.99998926331584
+      ]
+    },
+    {
+      "component": "05 Left wing mechanisms",
+      "name": "Wing root pin sleeve",
+      "solid": true,
+      "volume_cm3": 4.614371289592883,
+      "min_mm": [
+        -251.0,
+        145.0,
+        3.0000000000000004
+      ],
+      "max_mm": [
+        -239.0,
+        225.0,
+        15.0
+      ]
+    },
+    {
+      "component": "05 Left wing mechanisms",
+      "name": "Root locating pin",
+      "solid": true,
+      "volume_cm3": 0.9966702693514047,
+      "min_mm": [
+        -293.0,
+        138.0,
+        3.9999999999999996
+      ],
+      "max_mm": [
+        -287.0,
+        185.0,
+        10.0
+      ]
+    },
+    {
+      "component": "05 Left wing mechanisms",
+      "name": "Electrical harness conduit",
+      "solid": true,
+      "volume_cm3": 10.272191322834573,
+      "min_mm": [
+        -339.3489695752393,
+        153.84394479645536,
+        3.499999999999999
+      ],
+      "max_mm": [
+        -225.65103042476068,
+        551.1560552035446,
+        12.500000000000002
+      ]
+    },
+    {
+      "component": "05 Left wing mechanisms",
+      "name": "Left airfoil-matched elevon",
+      "solid": true,
+      "volume_cm3": 428.46655691695054,
+      "min_mm": [
+        -563.7069661978127,
+        338.0,
+        1.462711020268329
+      ],
+      "max_mm": [
+        -332.39616021040666,
+        998.5,
+        21.365495753722396
+      ]
+    },
+    {
+      "component": "05 Left wing mechanisms",
+      "name": "Hinge pin",
+      "solid": true,
+      "volume_cm3": 0.21030563665891178,
+      "min_mm": [
+        -348.38599379633166,
+        377.49807568243256,
+        6.000000000000001
+      ],
+      "max_mm": [
+        -340.31400620366844,
+        394.70192431756743,
+        10.0
+      ]
+    },
+    {
+      "component": "05 Left wing mechanisms",
+      "name": "Hinge pin (1)",
+      "solid": true,
+      "volume_cm3": 0.21030563665891133,
+      "min_mm": [
+        -418.3859937963316,
+        647.4980756824325,
+        6.000000000000001
+      ],
+      "max_mm": [
+        -410.31400620366844,
+        664.7019243175674,
+        10.0
+      ]
+    },
+    {
+      "component": "05 Left wing mechanisms",
+      "name": "Hinge pin (2)",
+      "solid": true,
+      "volume_cm3": 0.21030563665891178,
+      "min_mm": [
+        -495.3859937963316,
+        944.4980756824325,
+        6.0
+      ],
+      "max_mm": [
+        -487.3140062036683,
+        961.7019243175673,
+        10.0
+      ]
+    },
+    {
+      "component": "05 Left wing mechanisms",
+      "name": "Elevon pushrod",
+      "solid": true,
+      "volume_cm3": 0.5542418558540784,
+      "min_mm": [
+        -421.15304329824795,
+        579.0,
+        21.50782784208342
+      ],
+      "max_mm": [
+        -342.84695670175216,
+        582.0,
+        32.492172157916585
+      ]
+    },
+    {
+      "component": "05 Left wing mechanisms",
+      "name": "Control horn",
+      "solid": true,
+      "volume_cm3": 0.5678300912272416,
+      "min_mm": [
+        -425.0,
+        577.5,
+        7.999999999999998
+      ],
+      "max_mm": [
+        -420.99999999999994,
+        583.5,
+        33.0
+      ]
+    },
+    {
+      "component": "05 Left wing mechanisms",
+      "name": "Auxiliary payload pad - 24 mm M2 pattern",
+      "solid": true,
+      "volume_cm3": 4.706384074669873,
+      "min_mm": [
+        -393.00000000000006,
+        682.0,
+        0.0
+      ],
+      "max_mm": [
+        -349.0,
+        718.0,
+        3.0
+      ]
+    },
+    {
+      "component": "04 Right NACA 2415 wing",
+      "name": "Right smooth NACA 2415 wing shell",
+      "solid": true,
+      "volume_cm3": 588.0561618149841,
+      "min_mm": [
+        -582.0526890763141,
+        -1053.0,
+        -10.563414902099195
+      ],
+      "max_mm": [
+        -17.534568629286085,
+        -145.0,
+        38.63353974915283
+      ]
+    },
+    {
+      "component": "05 Right wing mechanisms",
+      "name": "Right servo lid internal seating flange",
+      "solid": true,
+      "volume_cm3": 4.444538804122388,
+      "min_mm": [
+        -374.00000000000006,
+        -610.5,
+        20.422687292089954
+      ],
+      "max_mm": [
+        -310.00000000000006,
+        -550.5,
+        28.000387741515308
+      ]
+    },
+    {
+      "component": "05 Right wing mechanisms",
+      "name": "Right underside accessory cover internal seating flange",
+      "solid": true,
+      "volume_cm3": 5.286755262970208,
+      "min_mm": [
+        -408.00000000000006,
+        -732.0,
+        -1.9079021358568848
+      ],
+      "max_mm": [
+        -334.0,
+        -668.0,
+        3.4864241020320996
+      ]
+    },
+    {
+      "component": "05 Right wing mechanisms",
+      "name": "Right servo pocket floor - provisional low profile",
+      "solid": true,
+      "volume_cm3": 5.2439999999999936,
+      "min_mm": [
+        -365.0,
+        -599.5,
+        0.0
+      ],
+      "max_mm": [
+        -319.0,
+        -561.5,
+        3.0
+      ]
+    },
+    {
+      "component": "05 Right wing mechanisms",
+      "name": "Servo pocket wall",
+      "solid": true,
+      "volume_cm3": 1.2539999999999871,
+      "min_mm": [
+        -365.0,
+        -599.5,
+        2.999999999999999
+      ],
+      "max_mm": [
+        -362.0,
+        -561.5,
+        14.0
+      ]
+    },
+    {
+      "component": "05 Right wing mechanisms",
+      "name": "Servo pocket wall (1)",
+      "solid": true,
+      "volume_cm3": 1.2539999999999871,
+      "min_mm": [
+        -321.99999999999994,
+        -599.5,
+        2.999999999999999
+      ],
+      "max_mm": [
+        -319.0,
+        -561.5,
+        14.0
+      ]
+    },
+    {
+      "component": "05 Right wing mechanisms",
+      "name": "Swept main spar tube",
+      "solid": true,
+      "volume_cm3": 26.44019686313789,
+      "min_mm": [
+        -489.6376495888154,
+        -941.6636079352868,
+        6.000010736684162
+      ],
+      "max_mm": [
+        -123.36235041118456,
+        -153.33639206471318,
+        15.99998926331584
+      ]
+    },
+    {
+      "component": "05 Right wing mechanisms",
+      "name": "Wing root pin sleeve",
+      "solid": true,
+      "volume_cm3": 4.614371289592883,
+      "min_mm": [
+        -251.0,
+        -225.0,
+        3.0000000000000004
+      ],
+      "max_mm": [
+        -239.0,
+        -145.0,
+        15.0
+      ]
+    },
+    {
+      "component": "05 Right wing mechanisms",
+      "name": "Root locating pin",
+      "solid": true,
+      "volume_cm3": 0.9966702693514047,
+      "min_mm": [
+        -293.0,
+        -185.0,
+        3.9999999999999996
+      ],
+      "max_mm": [
+        -287.0,
+        -138.0,
+        10.0
+      ]
+    },
+    {
+      "component": "05 Right wing mechanisms",
+      "name": "Electrical harness conduit",
+      "solid": true,
+      "volume_cm3": 10.272191322834573,
+      "min_mm": [
+        -339.3489695752393,
+        -551.1560552035446,
+        3.499999999999999
+      ],
+      "max_mm": [
+        -225.65103042476068,
+        -153.84394479645536,
+        12.500000000000002
+      ]
+    },
+    {
+      "component": "05 Right wing mechanisms",
+      "name": "Right airfoil-matched elevon",
+      "solid": true,
+      "volume_cm3": 428.50312433433544,
+      "min_mm": [
+        -563.7069661978127,
+        -998.5,
+        1.462711020268329
+      ],
+      "max_mm": [
+        -332.39616021040666,
+        -338.0,
+        21.3654957537224
+      ]
+    },
+    {
+      "component": "05 Right wing mechanisms",
+      "name": "Hinge pin",
+      "solid": true,
+      "volume_cm3": 0.21030563665891175,
+      "min_mm": [
+        -348.38599379633166,
+        -394.70192431756743,
+        6.000000000000001
+      ],
+      "max_mm": [
+        -340.31400620366844,
+        -377.49807568243256,
+        10.0
+      ]
+    },
+    {
+      "component": "05 Right wing mechanisms",
+      "name": "Hinge pin (1)",
+      "solid": true,
+      "volume_cm3": 0.21030563665891133,
+      "min_mm": [
+        -418.3859937963316,
+        -664.7019243175674,
+        6.000000000000001
+      ],
+      "max_mm": [
+        -410.31400620366844,
+        -647.4980756824325,
+        10.0
+      ]
+    },
+    {
+      "component": "05 Right wing mechanisms",
+      "name": "Hinge pin (2)",
+      "solid": true,
+      "volume_cm3": 0.21030563665891178,
+      "min_mm": [
+        -495.3859937963316,
+        -961.7019243175673,
+        6.0
+      ],
+      "max_mm": [
+        -487.3140062036683,
+        -944.4980756824325,
+        10.0
+      ]
+    },
+    {
+      "component": "05 Right wing mechanisms",
+      "name": "Elevon pushrod",
+      "solid": true,
+      "volume_cm3": 0.5542418558540784,
+      "min_mm": [
+        -421.15304329824795,
+        -582.0,
+        21.50782784208342
+      ],
+      "max_mm": [
+        -342.84695670175216,
+        -579.0,
+        32.492172157916585
+      ]
+    },
+    {
+      "component": "05 Right wing mechanisms",
+      "name": "Control horn",
+      "solid": true,
+      "volume_cm3": 0.5678300912272416,
+      "min_mm": [
+        -425.0,
+        -583.5,
+        7.999999999999998
+      ],
+      "max_mm": [
+        -420.99999999999994,
+        -577.5,
+        33.0
+      ]
+    },
+    {
+      "component": "05 Right wing mechanisms",
+      "name": "Auxiliary payload pad - 24 mm M2 pattern",
+      "solid": true,
+      "volume_cm3": 4.706384074669873,
+      "min_mm": [
+        -393.00000000000006,
+        -718.0,
+        0.0
+      ],
+      "max_mm": [
+        -349.0,
+        -682.0,
+        3.0
+      ]
+    },
+    {
+      "component": "06 NACA 0010 conventional tail",
+      "name": "NACA 0010 horizontal stabilizer -1",
+      "solid": true,
+      "volume_cm3": 840.8713727782851,
+      "min_mm": [
+        -1250.0,
+        -340.0,
+        66.99625749698254
+      ],
+      "max_mm": [
+        -940.0,
+        0.0,
+        93.00374250300854
+      ]
+    },
+    {
+      "component": "06 NACA 0010 conventional tail",
+      "name": "NACA 0010 horizontal stabilizer 1",
+      "solid": true,
+      "volume_cm3": 840.8713727782851,
+      "min_mm": [
+        -1250.0,
+        0.0,
+        66.99625749698254
+      ],
+      "max_mm": [
+        -940.0,
+        340.0,
+        93.00374250300854
+      ]
+    },
+    {
+      "component": "06 NACA 0010 conventional tail",
+      "name": "NACA 0010 vertical stabilizer",
+      "solid": true,
+      "volume_cm3": 874.0635747053021,
+      "min_mm": [
+        -1275.0,
+        -11.503310675741488,
+        40.0
+      ],
+      "max_mm": [
+        -1000.0,
+        11.503310675741648,
+        380.0
+      ]
+    },
+    {
+      "component": "07 Belly launch interface",
+      "name": "Launch hook load-spreader concept",
+      "solid": true,
+      "volume_cm3": 20.0,
+      "min_mm": [
+        430.0,
+        -25.0,
+        -52.0
+      ],
+      "max_mm": [
+        510.0,
+        25.0,
+        -47.0
+      ]
+    },
+    {
+      "component": "07 Belly launch interface",
+      "name": "Launch lug - load sizing required",
+      "solid": true,
+      "volume_cm3": 2.397876140340535,
+      "min_mm": [
+        463.0,
+        -4.0,
+        -70.0
+      ],
+      "max_mm": [
+        477.0,
+        4.0,
+        -45.0
+      ]
+    }
+  ],
+  "airfoil_surface_checks": {
+    "Left": {
+      "sample_count": 160,
+      "max_vertical_error_mm": 0.0005776882171630859,
+      "rms_vertical_error_mm": 0.00015140149526312962
+    },
+    "Right": {
+      "sample_count": 160,
+      "max_vertical_error_mm": 0.0005776882171630859,
+      "rms_vertical_error_mm": 0.00015140149526312962
+    }
+  },
+  "internal_envelope_checks": [
+    {
+      "side": "Left",
+      "part": "Left servo pocket floor - provisional low profile",
+      "outside_wing_cm3": 0.0
+    },
+    {
+      "side": "Left",
+      "part": "Servo pocket wall",
+      "outside_wing_cm3": 0.0
+    },
+    {
+      "side": "Left",
+      "part": "Servo pocket wall (1)",
+      "outside_wing_cm3": 0.0
+    },
+    {
+      "side": "Left",
+      "part": "Swept main spar tube",
+      "outside_wing_cm3": 0.0
+    },
+    {
+      "side": "Left",
+      "part": "Electrical harness conduit",
+      "outside_wing_cm3": 0.0
+    },
+    {
+      "side": "Left",
+      "part": "Auxiliary payload pad - 24 mm M2 pattern",
+      "outside_wing_cm3": 0.0
+    },
+    {
+      "side": "Right",
+      "part": "Right servo pocket floor - provisional low profile",
+      "outside_wing_cm3": 0.0
+    },
+    {
+      "side": "Right",
+      "part": "Servo pocket wall",
+      "outside_wing_cm3": 0.0
+    },
+    {
+      "side": "Right",
+      "part": "Servo pocket wall (1)",
+      "outside_wing_cm3": 0.0
+    },
+    {
+      "side": "Right",
+      "part": "Swept main spar tube",
+      "outside_wing_cm3": 0.0
+    },
+    {
+      "side": "Right",
+      "part": "Electrical harness conduit",
+      "outside_wing_cm3": 0.0
+    },
+    {
+      "side": "Right",
+      "part": "Auxiliary payload pad - 24 mm M2 pattern",
+      "outside_wing_cm3": 0.0
+    }
+  ]
+}

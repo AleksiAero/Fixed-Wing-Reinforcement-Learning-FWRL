@@ -1,0 +1,14 @@
+[
+  {
+    "side": "Left",
+    "added_volume_cm3": 10.786406327871191,
+    "solid": true,
+    "root_trim": "exact exterior fuselage BRep"
+  },
+  {
+    "side": "Right",
+    "added_volume_cm3": 10.793751776234785,
+    "solid": true,
+    "root_trim": "exact exterior fuselage BRep"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "completed_iteration": 361.0,
+  "solver_ended_normally": true,
+  "simple_convergence_reported": true,
+  "final_initial_residuals": {
+    "Ux": 4.7306601e-07,
+    "Uy": 9.8782274e-06,
+    "Uz": 1.6922387e-06,
+    "p": 1.3273041e-07,
+    "omega": 1.009205e-08,
+    "k": 3.9001629e-08
+  },
+  "last_continuity_row": [
+    361.0,
+    1.2987927e-08,
+    -6.0932817e-10,
+    -1.6136901e-05
+  ],
+  "force_and_yPlus_functionObjects": "disabled: Ubuntu v1912 sha1 IOstream runtime error",
+  "interpretation": "Coarse solver commissioning; advanced mesh quality flags remain; no mesh independence or aerodynamic validation."
+}

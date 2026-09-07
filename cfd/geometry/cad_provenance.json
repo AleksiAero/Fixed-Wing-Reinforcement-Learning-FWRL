@@ -1,0 +1,25 @@
+{
+  "source_document": "Spider v2",
+  "source_builder": "FWRL_Detail_R02.py",
+  "derivative": "same external loft definitions before internal cuts",
+  "solid": true,
+  "lumps": 1,
+  "volume_cm3": 84706.18663933531,
+  "min_mm": [
+    -1310.0,
+    -1053.0,
+    -87.81346714571609
+  ],
+  "max_mm": [
+    1150.0,
+    1053.0,
+    380.0
+  ],
+  "simplifications": [
+    "closed access covers and gaps",
+    "no internal equipment",
+    "neutral sealed controls",
+    "no propeller or thrust",
+    "no screws pushrods or launch lug"
+  ]
+}

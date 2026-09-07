@@ -1,5 +1,29 @@
 # SYNTHOSAR Flight Lab
 
+## Spider v2 CAD and CFD baseline
+
+The Fusion master **Spider v2** is saved under **ALEKSI AERO / Fixed Wing (Experimental)**.
+It preserves the original airframe outline, adds NACA 2415 wings and NACA 0010
+tail sections, and includes hollow equipment bays and removable covers. Both
+wing roots now meet the fuselage without the visible gaps.
+
+- [CAD files, dimensions and limitations](cad/README.md)
+- [Fusion assembly](cad/output_R02/FWRL_packaging_R02.f3d) / [STEP assembly](cad/output_R02/FWRL_packaging_R02.step)
+- [CFD setup and results](cfd/README.md) / [OpenFOAM case archive](cfd/spider_v2_openfoam_case.tar.gz)
+- [Convergence plot](cfd/results/convergence.png) / [Flow slice](cfd/results/flow_slice.png)
+
+The sealed, unpowered CFD derivative passed surface closure and self-intersection
+checks. A 506,654-cell OpenFOAM baseline at 25 m/s and zero geometric incidence
+converged in 361 SIMPLE iterations. Standard mesh checks pass; the extended audit
+flags low-determinant and concave cells. Optional force/y+ reporting was disabled
+due to an error in the packaged OpenFOAM build. This is a commissioning result,
+not aerodynamic or flight validation. The CAD gross wing area is 0.5093 m2;
+the existing RL model still uses its separate 0.31 m2 assumption. No training
+physics or coefficients have been replaced with these CFD results.
+
+![Spider v2 with corrected wing roots](cad/output_R02/root_join_top.png)
+
+
 ## Current training cycle
 
 Use `python -m fwrl.learn --device auto --envs 64 --steps 10000000 --output runs/new-training --live-state runs/live/mountain-zero-new.json` from the repository root (on Linux, prefix with `bash scripts/python.sh` instead of `python`). In another terminal, run `python -m fwrl.viewer --live-state runs/live/mountain-zero-new.json`. Blender's Start learning action uses the same curriculum trainer.

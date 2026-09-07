@@ -1,0 +1,20 @@
+{
+  "cad_saved_as": "Spider v2",
+  "fusion_folder": "ALEKSI AERO / Fixed Wing (Experimental)",
+  "closed_surface": true,
+  "surface_self_intersections": false,
+  "mesh_cells": 506654,
+  "standard_checkMesh_pass": true,
+  "extended_checkMesh_pass": false,
+  "extended_flags": {
+    "low_determinant_cells": 23,
+    "concave_cells": 26018,
+    "concave_faces": 1587,
+    "warped_faces": 9
+  },
+  "max_non_orthogonality_deg": 64.746968,
+  "max_skewness": 2.8527995,
+  "minimum_volume_m3": 3.2360728e-09,
+  "average_layers_reported": 2.68,
+  "fully_validated_for_aerodynamic_predictions": false
+}

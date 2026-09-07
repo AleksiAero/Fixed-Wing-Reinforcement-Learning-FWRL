@@ -16,3 +16,14 @@ worlds/*.png
 !.env.example
 *.pem
 *.key
+
+# Superseded CAD drafts and duplicate local delivery archives
+cad/output/
+cad/*.zip
+cad/wing_root_correction.py
+cad/FWRL_Detail/FWRL_Detail_R01.py
+cad/FWRL_Detail/FWRL_Detail_R02.py
+cad/output_R02/spider_v2_before_root_fix.f3d
+cad/output_R02/build.log
+cad/output_R02/root_fix.log
+cad/FWRL_Detail/.vscode/

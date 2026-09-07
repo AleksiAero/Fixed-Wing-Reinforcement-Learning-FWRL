@@ -1,0 +1,10 @@
+{
+  "span_mm": 2106,
+  "centerline_chord_mm": 354.75,
+  "tip_chord_mm": 121.11660000000002,
+  "gross_wing_planform_area_m2": 0.5093091432000001,
+  "aspect_ratio_gross": 8.708337675097129,
+  "fuselage_length_mm": 2460,
+  "horizontal_tail_span_mm": 680,
+  "source_planform_preserved": true
+}

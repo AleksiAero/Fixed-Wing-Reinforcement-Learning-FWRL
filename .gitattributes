@@ -2,3 +2,11 @@
 *.sh text eol=lf
 *.py text eol=lf
 *.ps1 text eol=crlf
+
+*.f3d binary
+*.step binary
+*.stl binary
+*.png binary
+*.tar.gz binary
+cfd/Allrun text eol=lf
+cfd/results/log.* -whitespace

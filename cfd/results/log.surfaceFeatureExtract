@@ -1,0 +1,85 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:                                        |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : OPENFOAM=1912 patch=200626
+Arch   : "LSB;label=32;scalar=64"
+Exec   : surfaceFeatureExtract
+Date   : Sep 06 2026
+Time   : 22:00:47
+Host   : EddiePC
+PID    : 1484
+I/O    : uncollated
+Case   : /root/spider-v2-cfd
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+Note: Feature line extraction only valid on closed manifold surfaces
+
+Reading surfaceFeatureExtractDict
+
+Surfaces     : spider.stl
+Output       : spider
+Load options : offset
+Write options: writeObj=yes writeVTK=off
+
+Statistics:
+Triangles    : 49208 in 1 region(s)
+Vertices     : 24606
+Bounding Box : (-1.3099999 -1.053 -0.087773189) (1.15 1.053 0.38)
+
+Constructing feature set from included angle 150
+Selecting edges based purely on geometric tests: no
+
+Initial Feature set:
+    points : 22
+    edges  : 1000
+    of which
+        region edges   : 0
+        external edges : 635
+        internal edges : 365
+
+Final Feature set:
+    points : 990
+    of which
+        convex             : 10
+        concave            : 2
+        mixed              : 10
+        non-feature        : 968
+    edges  : 1000
+    of which
+        external edges     : 635
+        internal edges     : 365
+        flat edges         : 0
+        open edges         : 0
+        multiply connected : 0
+
+Writing extendedFeatureEdgeMesh to "/root/spider-v2-cfd/constant/extendedFeatureEdgeMesh/spider.extendedFeatureEdgeMesh"
+
+Writing extendedEdgeMesh components to "/root/spider-v2-cfd/constant/extendedFeatureEdgeMesh/spider"
+Writing 10 convex feature points to "/root/spider-v2-cfd/constant/extendedFeatureEdgeMesh/spider_convexFeaturePts.obj"
+Writing 2 concave feature points to "/root/spider-v2-cfd/constant/extendedFeatureEdgeMesh/spider_concaveFeaturePts.obj"
+Writing 10 mixed feature points to "/root/spider-v2-cfd/constant/extendedFeatureEdgeMesh/spider_mixedFeaturePts.obj"
+Writing 10 mixed feature point structure to "/root/spider-v2-cfd/constant/extendedFeatureEdgeMesh/spider_mixedFeaturePtsStructure.obj"
+Writing 635 external edges to "/root/spider-v2-cfd/constant/extendedFeatureEdgeMesh/spider_externalEdges.obj"
+Writing 365 internal edges to "/root/spider-v2-cfd/constant/extendedFeatureEdgeMesh/spider_internalEdges.obj"
+Writing 0 flat edges to "/root/spider-v2-cfd/constant/extendedFeatureEdgeMesh/spider_flatEdges.obj"
+Writing 0 open edges to "/root/spider-v2-cfd/constant/extendedFeatureEdgeMesh/spider_openEdges.obj"
+Writing 0 multiple edges to "/root/spider-v2-cfd/constant/extendedFeatureEdgeMesh/spider_multipleEdges.obj"
+Writing 0 region edges to "/root/spider-v2-cfd/constant/extendedFeatureEdgeMesh/spider_regionEdges.obj"
+Writing 1000 edge directions to "/root/spider-v2-cfd/constant/extendedFeatureEdgeMesh/spider_edgeDirections.obj"
+
+Writing featureEdgeMesh to "/root/spider-v2-cfd/constant/triSurface/spider.eMesh"
+ExecutionTime = 0.05 s  ClockTime = 0 s
+
+End
+

@@ -1,0 +1,23 @@
+{
+  "source_sha256": "0c066473dbdcc508d0ede767e24a44c66161e41cec44a6d7a4aecba87fdb4404",
+  "units": "m",
+  "vertices": 24606,
+  "triangles": 49208,
+  "watertight": true,
+  "winding_consistent": true,
+  "connected_components": 1,
+  "bounds_m": [
+    [
+      -1.31,
+      -1.053,
+      -0.0877731852836737
+    ],
+    [
+      1.15,
+      1.053,
+      0.38
+    ]
+  ],
+  "volume_m3": 0.08379849494378015,
+  "tessellation_tolerance_mm": 0.08
+}
