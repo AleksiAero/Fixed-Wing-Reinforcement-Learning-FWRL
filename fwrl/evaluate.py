@@ -11,6 +11,13 @@ def evaluate(checkpoint, device='auto', count=16, seed=1001):
         device = 'cuda' if torch.cuda.is_available() else 'cpu'
     saved = torch.load(checkpoint, map_location=device, weights_only=True)
     metadata = saved['metadata']
+    if metadata.get('recipe') == 2:
+        from .learning_support import NormalizedPolicy,evaluate_policy
+        model=NormalizedPolicy(metadata['observation_dim']).to(device)
+        model.load_state_dict(saved['model']);model.eval()
+        result=evaluate_policy(model,metadata['world'],device,count,seed,max_seconds=1800)
+        (Path(checkpoint).parent/'evaluation.json').write_text(json.dumps(result,indent=2))
+        print(json.dumps(result,indent=2));return result
     env = VectorFlight(metadata['world'], count, device, seed)
     model = Policy(metadata['observation_dim']).to(device)
     model.load_state_dict(saved['model'])

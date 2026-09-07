@@ -47,7 +47,12 @@ def main():
                     pass
                 data,kind = cache['state'],'application/json'
             elif self.path=='/scene':
-                data,kind = scene,'application/json'
+                # Curriculum changes only the gates/target; terrain mesh is shared.
+                updated=json.loads(current.with_name(current.stem+'-world.json').read_text(encoding='utf-8'))
+                payload=json.loads(scene)
+                payload['world']=updated
+                payload['normals']=[gate_normal(updated,i) for i in range(len(updated['waypoints']))]
+                data,kind=json.dumps(payload).encode(),'application/json'
             elif self.path in ('/','/index.html'):
                 data,kind = (ROOT/'fwrl/web/index.html').read_bytes(),'text/html; charset=utf-8'
             else:

@@ -37,6 +37,7 @@ class VectorFlight:
         self.gate_age = torch.zeros_like(self.index)
         self.gate_timeouts = self.tensor(world.get("gate_timeout_s", [1e9]*len(self.points)))
         self.wind = torch.zeros((count, 3), device=self.device)
+        self.previous_command = torch.zeros((count,3),device=self.device)
         self.reset(torch.ones(count, dtype=torch.bool, device=self.device))
 
     def tensor(self, value):
@@ -53,10 +54,14 @@ class VectorFlight:
         self.index[mask] = 0
         self.age[mask] = 0
         self.gate_age[mask] = 0
-        self.wind[mask] = torch.randn((k, 3), generator=self.rng, device=self.device) * self.tensor([1., 1., .1])
+        self.wind[mask] = torch.randn((k, 3), generator=self.rng, device=self.device) * self.tensor([1., 1., .1]) * self.world.get("wind_scale",1.)
+        self.previous_command[mask]=0
 
     def observation(self):
         s = self.state
+        if self.world.get("training_recipe") == 2:
+            from .learning_support import compact_observation
+            return compact_observation(self)
         d = self.points[self.index] - s[:, :3]
         heading = torch.atan2(d[:, 1], d[:, 0]) - s[:, 3]
         pieces = [d / 700, torch.sin(heading)[:, None], torch.cos(heading)[:, None], s[:, 4:5] / self.cfg.max_speed, s[:, 5:7], self.wind / 5]
@@ -98,6 +103,7 @@ class VectorFlight:
             command = self.baseline() + torch.tanh(action) * self.tensor(self.world.get("residual_scale", [.35, .12, 5]))
             command = torch.maximum(torch.minimum(command, self.tensor([c.max_bank, c.max_gamma, c.max_speed])), self.tensor([-c.max_bank, -c.max_gamma, c.min_speed]))
         previous = s[:, :3].clone()
+        airborne_action = self.age*c.dt >= (2*self.world["launcher"]["length_m"]/self.world["launcher"]["exit_speed_mps"] if self.physical else 0)
         if self.physical:
             self.state = advance(s, command, self.world, self.age*c.dt, c.dt, self.wind, torch)
             s = self.state
@@ -132,12 +138,19 @@ class VectorFlight:
             reward = rewards['progress_per_m']*(distance-after) - .01 + hit.float()*rewards['hoop'] + success.float()*rewards['complete'] + crash.float()*rewards['crash'] + (timeout|truncated).float()*rewards['timeout']
         if self.physical:
             flying = self.age*c.dt > 2*self.world["launcher"]["length_m"]/self.world["launcher"]["exit_speed_mps"]
-            reward -= (flying & (self.index>0) if self.elevons else flying).float() * .15 * ((s[:, 4]-self.world["target_speed_mps"])/self.world["target_speed_mps"]).square()
+            if self.world.get('training_recipe') == 2:
+                from .learning_support import flight_shaping
+                reward += flying.float()*flight_shaping(self,s,command,distance-after)
+            else:
+                reward -= (flying & (self.index>0) if self.elevons else flying).float() * .15 * ((s[:, 4]-self.world["target_speed_mps"])/self.world["target_speed_mps"]).square()
             reward += hit.float()*10*torch.exp(-((s[:, 4]-self.world["target_speed_mps"])/4.47).square())
         self.gate_age = torch.where(hit,torch.zeros_like(self.gate_age),self.gate_age)
         self.index = torch.minimum(self.index + hit.long(), torch.full_like(self.index, len(self.points) - 1))
         final_obs = self.observation()
         info = {"terminal": terminal.clone(), "timeout": timeout.clone(), "truncated": truncated.clone(), "final_obs": final_obs.clone(), "final_state": s.clone(), "success": success.clone(), "crash": crash.clone(), "successes": success.sum(), "crashes": crash.sum(), "waypoints": hit.sum()}
+        info["airborne_action"] = airborne_action
+        info["hit"] = hit.clone()
+        self.previous_command = command.detach().clone()
         self.reset(done)
         return self.observation(), reward, done, info
 

@@ -1,5 +1,18 @@
 # SYNTHOSAR Flight Lab
 
+## Current training cycle
+
+Use `python -m fwrl.learn --device auto --envs 64 --steps 10000000 --output runs/new-training --live-state runs/live/mountain-zero-new.json` from the repository root (on Linux, prefix with `bash scripts/python.sh` instead of `python`). In another terminal, run `python -m fwrl.viewer --live-state runs/live/mountain-zero-new.json`. Blender's Start learning action uses the same curriculum trainer.
+
+Every curriculum run starts with random weights: no resume, demonstrations, baseline guidance or flight controller. Stages are 70 mph straight flight, 80 mph gentle turns, then the mountain course at 100, 150 and 200 mph. Physics and the 65 mph ground launcher stay unchanged. Promotion needs two consecutive fixed-seed evaluations with at least 75% completions, at most 10% stall samples and at least 60% of airborne samples within 20% of the stage speed, plus 50,000 training transitions at that stage.
+
+Post-launch rewards encourage forward progress at the stage speed and penalize stalls, underspeed, angular-rate excursions and abrupt commands. Hoop/crash/timeout rewards remain positive/negative as before. PPO scales rewards by 0.01, uses gamma 0.999, GAE lambda 0.98 and 512-step rollouts, excludes rail-constrained actions from actor updates, clips updates and monitors approximate KL. Observations include eight nearest obstacles, terrain clearance/preview and aircraft state, with running normalization saved inside each checkpoint.
+
+`evaluations.jsonl` records deterministic fixed-seed tests every five updates, independent of the training environments. `metrics.jsonl` records stage, crashes, gates, loss, KL and actual new transitions per second. The browser/Blender view is **live policy evaluation during training**, not a baked replay and not part of the PPO batch. It refreshes weights between flights and runs at real time while training runs unpaced. Its Pause button pauses both training and the live flight. Put a `STOP` file in the run folder to stop and save.
+
+The older `fwrl.training` entry point remains available for legacy experiments; older sections below describe those workflows and historical validation, not the current curriculum defaults.
+
+
 **Native Linux developers:** follow [the Linux setup guide](docs/linux.md). Core training and the live browser viewer work without Windows, WSL, ROS or a GPU. Start with `bash scripts/setup_linux.sh`; CPU/CUDA selection is automatic.
 
 Latest airframe: reference-inspired long fuselage, 2.106 m swept wings and conventional fixed tail attached directly to the body. The model retains elevon control. Reference sea-level 1g stall speed is **45 mph**, using 0.31 m² wing area; launch speed is **65 mph**. Stall is modeled through angle of attack, lift loss and increased drag, not an arbitrary speed cutoff. Aircraft dimensions and coefficients are design assumptions, not measurements from the reference image.

@@ -85,3 +85,10 @@ This establishes basic functionality, not real-aircraft fidelity, controller fli
 - Native Linux viewer returned HTTP 200 for page, scene and state on an isolated port.
 - Windows: 23 tests passed, 10 skipped because that environment has no PyTorch.
 - Physical Linux desktop and other distributions were not exercised locally; Ubuntu CPU CI is included.
+
+## Curriculum restart
+
+- 38 tests passed, including fixed observation dimensions across stages, no guidance calls, rail-action masking, normalized checkpoint round trips, flight reward ordering and evaluation isolation.
+- CPU and CUDA curriculum smoke runs completed with finite losses, checkpoint saves and independent fixed-seed evaluations. Smoke policies are not used by the fresh run.
+- The new user run started at zero transitions with seed 73, 64 CUDA environments and 512-step rollouts. The live display is explicitly labeled policy evaluation; it never supplies training data or demonstrations.
+- Initial updates had finite losses. These checks establish operation, not flight mastery.

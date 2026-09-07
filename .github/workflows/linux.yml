@@ -10,4 +10,4 @@ jobs:
           python-version: '3.11'
       - run: bash scripts/setup_linux.sh
       - run: bash scripts/python.sh -m pytest -q
-      - run: bash scripts/python.sh -m fwrl.training --device cpu --envs 2 --horizon 8 --steps 16 --output runs/ci --live-state runs/live/ci.json
+      - run: bash scripts/python.sh -m fwrl.learn --device cpu --envs 2 --horizon 64 --steps 128 --output runs/ci --live-state runs/live/ci.json

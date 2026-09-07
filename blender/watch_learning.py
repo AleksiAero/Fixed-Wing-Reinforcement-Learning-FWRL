@@ -48,13 +48,12 @@ class FWRLStartLearning(bpy.types.Operator):
         world_path.write_text(scene['navigation_world_json'], encoding='utf-8')
         def target(p):
             return linux_path(p) if os.name == 'nt' else str(p)
-        command = ['bash','scripts/python.sh','-m','fwrl.training','--device',os.environ.get('FWRL_DEVICE','auto'),
+        command = ['bash','scripts/python.sh','-m','fwrl.learn','--device',os.environ.get('FWRL_DEVICE','auto'),
                    '--world',target(world_path),'--envs','64','--steps',str(scene.get('learning_steps',10000000)),
                    '--seed',str(time.time_ns() % 2147483647),
-                   '--realtime','--live-state',target(telemetry),'--output',target(run)]
+                   '--live-state',target(telemetry),'--output',target(run)]
         flags = 0
-        if os.name != 'nt':
-            command += ['--owner-pid',str(os.getpid())]
+        if os.name != "nt":command += ["--owner-pid",str(os.getpid())]
         if os.name == 'nt':
             command = ['wsl','-d','Ubuntu-24.04','--cd',str(root),'--',*command]
             flags = subprocess.CREATE_NO_WINDOW
@@ -103,7 +102,7 @@ class FWRLLearningPanel(bpy.types.Panel):
     def draw(self, context):
         layout = self.layout
         layout.label(text=scene.get('live_status','Ready'))
-        layout.label(text=f"{scene['airspeed_mph']:.1f} mph | Hoop {scene['next_hoop']}/20")
+        layout.label(text=f"{scene['airspeed_mph']:.1f} mph | Hoop {scene['next_hoop']}/{scene.get('gate_count',20)}")
         layout.label(text=f"Episode {scene['live_episode']} | {scene['live_steps']:,} transitions")
         layout.operator('fwrl.start_learning', icon='PLAY')
         layout.operator('fwrl.pause_learning', icon='PAUSE')
@@ -114,7 +113,7 @@ class FWRLLearningPanel(bpy.types.Panel):
 
 def hud():
     for y,text,size in [(100,'LIVE TRAINING · MOUNTAIN GAUNTLET',20),
-                        (72,f"{scene['airspeed_mph']:.1f} mph   |   Hoop {scene['next_hoop']}/20   |   Episode {scene['live_episode']}",17),
+                        (72,f"{scene['airspeed_mph']:.1f} mph   |   Hoop {scene['next_hoop']}/{scene.get('gate_count',20)}   |   Episode {scene['live_episode']}",17),
                         (46,scene.get('live_status','Ready'),15)]:
         blf.position(0,24,y,0)
         blf.size(0,size)
@@ -130,6 +129,34 @@ def poll():
         # Ignore telemetry from another session/course, including an old file.
         if state['run'] and Path(packet['run']).name == state['run'].name:
             state['packet'] = packet
+            if packet.get('stage') is not None and packet['stage'] != state.get('stage'):
+                from fwrl.landscape import gate_normal
+                world=json.loads(telemetry.with_name(telemetry.stem+'-world.json').read_text())
+                old_world=json.loads(scene['navigation_world_json'])
+                for i in range(20):
+                    ring=bpy.data.objects.get(f'Hoop {i+1:02d} upright course marker')
+                    label=bpy.data.objects.get(f'Hoop {i+1:02d} number')
+                    active=i<len(world['waypoints'])
+                    for obj in (ring,label):
+                        if obj:obj.hide_viewport=not active;obj.hide_render=not active
+                    if active and ring:
+                        ring.location=world['waypoints'][i]
+                        old_radius=state.get('display_radii',old_world['gate_radii_m'])[i]
+                        new_radius=world['gate_radii_m'][i]
+                        # Adjust the torus major radius while preserving tube thickness.
+                        import math
+                        for vertex in ring.data.vertices:
+                            angle=math.atan2(vertex.co.y,vertex.co.x)
+                            vertex.co.x+=(new_radius-old_radius)*math.cos(angle)
+                            vertex.co.y+=(new_radius-old_radius)*math.sin(angle)
+                        ring.rotation_quaternion=Vector((0,0,1)).rotation_difference(Vector(gate_normal(world,i)))
+                        if label:label.location=Vector(world['waypoints'][i])+Vector((0,0,new_radius+7))
+                # Keep original hidden-gate radii for a later stage with more gates.
+                radii=state.get('display_radii',old_world['gate_radii_m'][:])
+                for i in range(len(world['waypoints'])):radii[i]=world['gate_radii_m'][i]
+                state['display_radii']=radii
+                scene['gate_count']=len(world['waypoints']);state['stage']=packet['stage']
+
             s = packet['state']
             airframe.location = s[:3]
             if len(s)>=20:

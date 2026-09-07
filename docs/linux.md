@@ -22,7 +22,7 @@ For GPU development, install the PyTorch build matching your hardware/driver int
 From the repository root, start training in one terminal:
 
 ```bash
-bash scripts/python.sh -m fwrl.training --device auto --envs 8 --steps 1000000 --realtime --output runs/linux-dev --live-state runs/live/linux-dev.json
+bash scripts/python.sh -m fwrl.learn --device auto --envs 8 --steps 1000000 --output runs/linux-dev --live-state runs/live/linux-dev.json
 ```
 
 Once telemetry has appeared, start the viewer in a second terminal:
@@ -31,7 +31,7 @@ Once telemetry has appeared, start the viewer in a second terminal:
 bash scripts/python.sh -m fwrl.viewer --live-state runs/live/linux-dev.json
 ```
 
-Open `http://127.0.0.1:8765/` in a WebGL-capable browser. The server listens on localhost only; use `--port 8766` if another viewer is running. Three.js currently loads from a CDN, so the browser needs internet access. The viewer shows actual training state, not a replay. CPU training may run slower than wall time; reduce the environment count when needed.
+Open `http://127.0.0.1:8765/` in a WebGL-capable browser. The server listens on localhost only; use `--port 8766` if another viewer is running. Three.js currently loads from a CDN, so the browser needs internet access. The viewer runs live policy evaluation at real time while PPO training runs independently. It reloads the latest checkpoint between flights; these live evaluation flights do not enter the PPO training buffer. Reduce the environment count on slower CPUs.
 
 Each new training run needs a fresh output directory. To request a checkpoint and graceful stop, run `touch runs/linux-dev/STOP`. A `PAUSE` file pauses training; remove it to resume, or use the viewer's pause button. Stop the viewer with Ctrl+C. Checkpoints and generated scenes remain local and are excluded from Git.
 
