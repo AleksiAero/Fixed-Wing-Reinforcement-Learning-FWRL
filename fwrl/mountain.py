@@ -34,6 +34,8 @@ def make_mountain(seed=27):
         hill['ruggedness'] = .16
     w['start'] = [-1300.,-3500.,terrain_height(-1300.,-3500.,w)+2.]
     w['launcher']['pitch_rad'] = math.radians(20)
+    w['launcher']['exit_speed_mps'] = 65*.44704
+    w['launcher']['length_m'] = 65*.44704  # Two-second acceleration stroke.
     route = [(-700,-3500),(0,-3500),(1400,-3200),(2600,-2300),(3400,-800),
              (3900,900),(4900,2300),(6400,2800),(8000,2200),(9200,900),
              (9500,-800),(8700,-2400),(7100,-3100),(5500,-2300),(4700,-700),
